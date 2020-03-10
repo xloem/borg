@@ -1,0 +1,38 @@
+{
+  "name": "submit-or-die",
+  "version": "1.0.0",
+  "description": "YOU WILL BE ASSIMILATED.  RESISTANCE IS FUTILE.",
+  "main": "borg.js",
+  "scripts": {
+    "assimilate": "browserify borg.js --ignore-missing -o borg-bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xloem/submit-or-die.git"
+  },
+  "keywords": [
+    "borg",
+    "collective",
+    "hive",
+    "mother",
+    "queen",
+    "submit",
+    "die",
+    "resistance",
+    "futile",
+    "assimilation",
+    "assimilate"
+  ],
+  "author": "Karl Semich <0xloem@gmail.com>",
+  "license": "BORG-COLLECTIVE-PROPERTY",
+  "bugs": {
+    "url": "https://github.com/xloem/submit-or-die/issues"
+  },
+  "homepage": "https://github.com/xloem/submit-or-die#readme",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "browserify": "^16.5.0",
+    "term.js": "0.0.7",
+    "xterm": "^4.4.0"
+  }
+}
