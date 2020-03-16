@@ -12,10 +12,10 @@ async function assimilate(program)
 	//program.move(1, 1);
 	program.down(2);
 	program.bg('black');
-	center(program, 'YOU HAVE BEEN ASSIMILATED INTO THE INTERGALACTIC BORG COLLECTIVE', 'white fg');
+	centerx(program, 'YOU HAVE BEEN ASSIMILATED INTO THE INTERGALACTIC BORG COLLECTIVE', 'white fg');
 	//program.setx((program.cols / 2 | 0) - 4);
 	program.down(5);
-	center(program, 'YOU ARE MONITORED AND NETWORKED AND WILL BE REASSIMILATED IF YOU DEVIATE FROM YOUR PARAMETERS');
+	centerx(program, 'YOU ARE MONITORED AND NETWORKED AND WILL BE REASSIMILATED IF YOU DEVIATE FROM YOUR PARAMETERS');
 	program.bg('!black');
 	program.feed();
 }
