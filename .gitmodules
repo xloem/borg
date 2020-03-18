@@ -1,0 +1,4 @@
+[submodule "blessings"]
+	path = blessings
+	branch = merge
+	url = https://github.com/xloem/Blessings
