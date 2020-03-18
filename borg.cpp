@@ -17,14 +17,14 @@ public:
 	}
 	~Display()
 	{
-		monitor.endwin();
+		//monitor.endwin();
 	}
 
-	void center(int y, std::string str)
+	void centerx(int y, std::string str, blessings::PropertyANSI colors = {})
 	{
 		size_t x = (resolution.width - str.size()) / 2;
 		for (size_t i = 0; i < str.size(); ++ i) {
-			monitor(x+i,y) = str[i];
+			monitor(x+i,y) = blessings::Monitor::Cell(str[i], colors);
 		}
 	}
 
@@ -33,16 +33,14 @@ public:
 	blessings::Resolution resolution;
 };
 
-void center(int y, std::string str)
-{
-
-}
-
 int main() {
 	Display display;
-	display.monitor.tile(".");
-	display.monitor(4,4) = "@";
-	display.center(5, "Hello");
+	//display.monitor.tile(".");
+	//display.monitor(4,4) = "@";
+	
+	display.centerx(2, "YOU HAVE BEEN ASSIMILATED INTO THE INTERGALACTIC BORG COLLECTIVE", {{},blessings::ColorANSI::BLACK,false,true});
+	display.centerx(7, "YOU ARE MONITORED AND NETWORKED AND WILL BE REASSIMILATED IF YOU DEVIATE FROM YOUR PARAMETERS", {{},blessings::ColorANSI::BLACK,false,true});
+
 	display.monitor.draw();
 
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
