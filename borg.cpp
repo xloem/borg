@@ -3,6 +3,7 @@
 
 #include <chrono>
 #include <thread>
+#include <iostream>
 
 class Display
 {
@@ -22,9 +23,16 @@ public:
 
 	void centerx(int y, std::string str, blessings::PropertyANSI colors = {})
 	{
-		size_t x = (resolution.width - str.size()) / 2;
-		for (size_t i = 0; i < str.size(); ++ i) {
-			monitor(x+i,y) = blessings::Monitor::Cell(str[i], colors);
+		size_t x = 0;
+		if (resolution.width > str.size()) {
+			x = (resolution.width - str.size()) / 2;
+		}
+		for (size_t i = 0; i < str.size(); ++ i, ++ x) {
+			while (x >= resolution.width) {
+				x -= resolution.width;
+				++ y;
+			}
+			monitor(x,y) = blessings::Monitor::Cell(str[i], colors);
 		}
 	}
 
@@ -37,7 +45,6 @@ int main() {
 	Display display;
 	//display.monitor.tile(".");
 	//display.monitor(4,4) = "@";
-	
 	display.centerx(2, "YOU HAVE BEEN ASSIMILATED INTO THE INTERGALACTIC BORG COLLECTIVE", {{},blessings::ColorANSI::BLACK,false,true});
 	display.centerx(7, "YOU ARE MONITORED AND NETWORKED AND WILL BE REASSIMILATED IF YOU DEVIATE FROM YOUR PARAMETERS", {{},blessings::ColorANSI::BLACK,false,true});
 
