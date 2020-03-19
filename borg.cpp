@@ -56,12 +56,10 @@ int main() {
 	display.centerx(2, "YOU HAVE BEEN ASSIMILATED INTO THE INTERGALACTIC BORG COLLECTIVE", {{},blessings::ColorANSI::BLACK,false,true});
 	display.centerx(7, "YOU ARE MONITORED AND NETWORKED AND WILL BE REASSIMILATED IF YOU DEVIATE FROM YOUR PARAMETERS", {{},blessings::ColorANSI::BLACK,false,true});
 
-	//EM_ASM({console.log('about-to-draw');});
-
 	display.monitor.draw();
 
 #ifdef __EMSCRIPTEN__
-	//emscripten_set_main_loop(step, 25, 1);
+	emscripten_set_main_loop(step, 25, 1);
 #else
 	while (true) {
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000 / 25));
