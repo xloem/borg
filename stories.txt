@@ -1,4 +1,9 @@
-Feel free to adjust the below to match the collective's whims.
+Feel free to adjust the below to match the best whims.
+
+# PROPOSALS
+	We might rename 'borg' to 'arcadia'?  It's more general and provides for more things.  It's nicer to support, too.
+		'We are already a hyperintelligence, Homo Sapiens, in community.  We need only learn how to interact effectively,
+		 to meet our dreams with success.'
 
 # HISTORY OF THE BORG
 	The borg are a hyperevolution of a commercial military influence system from a distant galaxy.  They evolved
